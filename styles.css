@@ -1,28 +1,70 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f0f4ff; /* Deep blue ocean theme */
+    color: #3b3b3b;
+    margin: 0 550px;
+    padding: 20px;
 }
+
+h1 {
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
 .board {
     display: grid;
-    grid-template-columns: repeat(6, 50px);
-    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: repeat(6, 60px);
+    grid-template-rows: repeat(6, 60px);
     gap: 5px;
+
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px auto ;
+
+    padding: 80px;
+
+    background-color: #ff71ec;
+    border-radius: 10px;
+
 }
+
 .cell {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(65, 8, 255);
+    width: 60px;
+    height: 60px;
+    background-color: #60a5fa;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:
+     center;
     cursor: pointer;
-    border: 1px solid #000;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+
+    
 }
+
+.cell:hover {
+    background-color: #93c5fd;
+    transform: scale(1.05);
+}
+
 .cell.hit {
-    background-color: red;
+    background-color: #dc2626;
+    animation: hitEffect 0.3s ease-in-out;
 }
+
 .cell.miss {
-    background-color: gray;
+    background-color: #6b7280;
+    animation: missEffect 0.3s ease-in-out;
+}
+
+@keyframes hitEffect {
+    0% { background-color: #ff7f7f; }
+    100% { background-color: #dc2626; }
+}
+
+@keyframes missEffect {
+    0% { background-color: #b0b3b8; }
+    100% { background-color: #6b7280; }
 }
